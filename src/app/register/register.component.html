@@ -1,0 +1,86 @@
+<section id="register" class="main-container">
+    <main class="main  two-cols">
+        <div class="left-col">
+            <label>Open an account</label>
+            <form [formGroup]="registerForm" class="form">  
+                <div class="form-group">
+                    <input 
+                        id="firstName" 
+                        type="text" 
+                        name="firstName" 
+                        formControlName="firstName" 
+                        placeholder="First name"
+                        [ngStyle]="{'border': formSubmitted && registerForm.get('firstName')!.invalid ? '1px solid red' : ''}"
+                    >
+                    <span *ngIf="formSubmitted && registerForm.get('firstName')!.invalid" class="helperContainer">
+                        Please provide your first name
+                    </span>
+                </div> 
+                <div class="form-group">
+                    <input 
+                        id="lastName" 
+                        type="text" 
+                        name="lastName" 
+                        formControlName="lastName" 
+                        placeholder="Last name"
+                        [ngStyle]="{'border': formSubmitted && registerForm.get('lastName')!.invalid ? '1px solid red' : ''}"
+                    >
+                    <span *ngIf="formSubmitted && registerForm.get('lastName')!.invalid" class="helperContainer">
+                        Please provide your first name
+                    </span>
+                </div> 
+                <div class="form-group">
+                    <input 
+                        id="email" 
+                        type="email" 
+                        name="email"
+                        formControlName="email" 
+                        placeholder="E-mail"
+                        [ngStyle]="{'border': formSubmitted && registerForm.get('email')!.invalid ? '1px solid red' : ''}"
+                    >
+                    <span *ngIf="formSubmitted && registerForm.get('email')!.invalid" class="helperContainer">
+                        Please provide a valid e-mail address
+                    </span>
+                </div>
+                <div class="form-group">
+                    <input 
+                        id="password"  
+                        type="password"
+                        name="pswd" 
+                        formControlName="password" 
+                        placeholder="Password"
+                        [ngStyle]="{'border': formSubmitted && registerForm.get('password')!.invalid ? '1px solid red' : ''}"
+                    >
+                    <div *ngIf="formSubmitted && registerForm.get('password')!.invalid" class="helperContainer">
+                        The password need to contain at least :
+                        <br/>- 8 characters
+                        <br/>- 1 uppercase
+                        <br/>- 1 lowercase
+                        <br/>- 1 number
+                    </div>
+                </div>
+                <div class="form-group__buttons">
+                    <button
+                        class="btn-primary" 
+                        type="submit" 
+                        (click)="onRegister()" 
+                        
+                    >
+                        Open
+                    </button>
+                </div>
+            </form>
+    
+            <p class="register-footer">
+               Already have an account ? <a routerLink="/login" class="emphasis">Log-in</a>
+            </p>
+        </div>
+
+        <div class="right-col img-container">
+            <img src="../../assets/micheile-dot-com-SoT4-mZhyhE-unsplash.jpg" alt="register">
+        </div>
+    </main>
+
+    <app-loading [ngClass]="isLoading? 'loading--show' : 'loading--hide'"></app-loading>
+    <app-toast [ngClass]="showToast? 'toast--show' : 'toast--hide'" [toastData]="toastData"></app-toast>
+</section>

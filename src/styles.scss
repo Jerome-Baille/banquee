@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@import './Sass/base/variables';
+@import './Sass/base/typography';
+
+@import './Sass/components/buttons';
+@import './Sass/components/container';
+@import './Sass/components/toast';
+@import './Sass/components/loading';
+
+@import './Sass/layout/header';
+@import './Sass/layout/footer';
+
+@import './Sass/pages/home';
+@import './Sass/pages/features';
+@import './Sass/pages/compare-cards';
+@import './Sass/pages/support';
+@import './Sass/pages/blog';
+@import './Sass/pages/register';
