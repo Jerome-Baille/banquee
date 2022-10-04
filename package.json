@@ -28,6 +28,7 @@
     "@angular/cli": "~14.2.3",
     "@angular/compiler-cli": "^14.2.0",
     "@types/jasmine": "~4.0.0",
+    "angular-cli-ghpages": "^1.0.3",
     "commitizen": "^4.2.5",
     "cz-conventional-changelog": "^3.3.0",
     "jasmine-core": "~4.3.0",
